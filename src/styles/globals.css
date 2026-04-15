@@ -1,0 +1,112 @@
+@import "clash-grotesk.css";
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 156 34% 6%;
+    --foreground: 152 32% 96%;
+
+    --card: 156 32% 8%;
+    --card-foreground: 152 32% 96%;
+
+    --popover: 156 32% 8%;
+    --popover-foreground: 152 32% 96%;
+
+    --primary: 145 72% 52%;
+    --primary-foreground: 156 34% 8%;
+
+    --secondary: 161 55% 46%;
+    --secondary-foreground: 154 30% 86%;
+
+    --muted: 156 22% 16%;
+    --muted-foreground: 156 14% 66%;
+
+    --accent: 156 22% 16%;
+    --accent-foreground: 152 32% 96%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 156 20% 18%;
+    --input: 156 20% 18%;
+    --ring: 145 72% 60%;
+
+    --radius: 0.5rem;
+  }
+}
+
+/* global elements */
+@layer base {
+  html[data-scroll-orientation="horizontal"] {
+    body {
+      @apply w-fit;
+    }
+    [data-scroll-container] {
+      @apply flex;
+    }
+  }
+  * {
+    @apply border-border;
+  }
+  html {
+    @apply antialiased;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  section {
+    scroll-margin-top: 60px;
+  }
+}
+
+/* custom scrollbar */
+@layer base {
+  ::-webkit-scrollbar {
+    @apply h-2.5 w-2 transition;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted;
+  }
+  ::-webkit-scrollbar-thumb:active {
+    @apply bg-primary;
+  }
+}
+
+/* custom styles */
+@layer base {
+  .clash-grotesk {
+    font-family: "ClashGrotesk-Variable", sans-serif;
+  }
+  .audiowide {
+    font-family: "Audiowide", sans-serif;
+  }
+  .text-gradient {
+    @apply bg-gradient-to-br from-primary to-secondary bg-clip-text text-transparent;
+  }
+  .nav-active {
+    @apply text-sm tracking-tight text-foreground;
+  }
+  .nav-link {
+    @apply text-sm tracking-tight text-muted-foreground;
+  }
+
+  /* blinking animation */
+  @keyframes blink {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  .animate-blink {
+    animation: blink 1s infinite;
+  }
+}
