@@ -692,7 +692,7 @@ The 2026 edition focuses on emerging agri technologies, climate resilient practi
         </section>
 
         {/* Services */}
-        <section id="services" data-scroll-section>
+        {/* <section id="services" data-scroll-section>
           <div
             data-scroll
             data-scroll-speed=".4"
@@ -738,7 +738,7 @@ The 2026 edition focuses on emerging agri technologies, climate resilient practi
               ))}
             </motion.div>
           </div>
-        </section>
+        </section> */}
 
         {/* Contact */}
         <section id="contact" data-scroll-section className="my-64">
@@ -748,10 +748,10 @@ The 2026 edition focuses on emerging agri technologies, climate resilient practi
             data-scroll-position="top"
             className="flex flex-col items-center justify-center rounded-lg bg-gradient-to-br from-primary/[6.5%] to-white/5 px-8 py-16 text-center xl:py-24"
           >
-            <h2 className="text-4xl font-medium tracking-tighter xl:text-6xl">
+            {/* <h2 className="text-4xl font-medium tracking-tighter xl:text-6xl">
               Uyire Ponalum Vivasayatha{" "}
               <span className="text-gradient clash-grotesk">Vitradhinga.</span>
-            </h2>
+            </h2> */}
             <p className="mt-1.5 text-base tracking-tight text-muted-foreground xl:text-sm">
               Connect with the cultural wave.
             </p>
