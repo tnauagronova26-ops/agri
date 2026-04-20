@@ -46,7 +46,7 @@ const onlineEvents = [
 
 const offlineEvents = [
   {
-    title: "Agrishop Tank",
+    title: "Agri Shark Tank",
     description: "",
     },
   {
@@ -65,7 +65,7 @@ const offlineEvents = [
     description: "",
    },
   {
-    title: "Sopranox",
+    title: "SopranoX",
     description: "",
     },{
     title: "Bounty Hunt",
@@ -526,7 +526,8 @@ export default function Home() {
               <Image
                 src="/assets/WhatsApp Image 2026-04-17 at 9,50,22 PM-Picsart-AiImageEnhancer-Picsart-BackgroundRemover.jpeg"
                 alt="Agronova 26 emblem"
-                fill
+                width={2000}
+                height={900}
                 priority
                 sizes="100vw"
                 className="object-contain p-2"
@@ -538,24 +539,14 @@ export default function Home() {
                   Register <ChevronRight className="ml-1 h-4 w-4" />
                 </Button>
               </Link>
-              <Link href="#about">
                 <Button
                   variant="outline"
                 >
-                  Learn more
-                </Button>
-              </Link>
+                  <a href="/308065124_464535789048420_7533850199481911634_n.jpg" download className="w-full">Brochure</a>                
+                </Button>          
             </span>
           </div>
-          <div
-            className={cn(
-              styles.scroll,
-              isScrolled && styles["scroll--hidden"],
-            )}
-          >
-            Scroll to discover{" "}
-            <TriangleDownIcon className="mt-1 animate-bounce" />
-          </div>
+         
         </section>
 
         {/* About */}
@@ -571,7 +562,7 @@ export default function Home() {
                Agronova is a scientific event warmly welcomes the future enthusiasts of the Indian nation. This prestigious occasion offers each participant a level playing field to showcase their hidden talents. Agronova’26 cordially invites all inquisitive and passionate minds to delve into India’s agricultural backbone. Don’t miss out on this valuable opportunity—join us and showcase your talents to hit our targets.
               </h2>
               
-              <div className="grid grid-cols-2 gap-6 pt-4 xl:grid-cols-4 xl:gap-8">
+              <div className="grid grid-cols-2 gap-6 pt-4 xl:grid-cols-3 xl:gap-8">
                 {aboutStats.map((stat) => (
                   <div
                     key={stat.label}
