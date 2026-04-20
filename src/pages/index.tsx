@@ -47,40 +47,53 @@ const onlineEvents = [
 const offlineEvents = [
   {
     title: "Agrishop Tank",
+    description: "",
     },
   {
     title: "Bio-Alchemy",
+    description: "",
    },
   {
     title: "Youth Parliament",
+    description: "",
    },{
     title: "Waste to Wealth",
+    description: "",
    },
   {
     title: "Farm League Arena",
+    description: "",
    },
   {
     title: "Sopranox",
+    description: "",
     },{
     title: "Bounty Hunt",
+    description: "",
    },
   {
     title: "Field Forensics",
+    description: "",
     },
   {
     title: "Foodpreneur Feast",
+    description: "",
     },
   {
     title: "Abstract cum Presentation",
+    description: "",
    },
   {
     title: "Fluents and Fearless",
+    description: "",
     },
   {
     title: "Grain Art",
+    description: "",
     },
   {
     title: "Workshop",
+    description: "",
     },
 ];
 
@@ -596,9 +609,11 @@ export default function Home() {
                   <h3 className="relative text-xl font-semibold tracking-tight text-white group-hover:text-white/95 transition-colors">
                     {event.title}
                   </h3>
-                  <p className="relative mt-2 text-sm leading-relaxed text-white/80 group-hover:text-white/90 transition-colors">
-                    {event.description}
-                  </p>
+                  {event.description && (
+                    <p className="relative mt-2 text-sm leading-relaxed text-white/80 group-hover:text-white/90 transition-colors">
+                      {event.description}
+                    </p>
+                  )}
                   <Button
                     className="relative mt-4 bg-white text-primary hover:bg-white/90 font-semibold shadow-lg hover:shadow-xl transition-all duration-200"
                     onClick={() => scrollTo(document.querySelector("#registration"))}
