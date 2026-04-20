@@ -48,7 +48,7 @@ const navLinks = [
     ],
   },
   { href: "#registration", text: "Registration" },
-  { href: "#services", text: "Services" },
+  // { href: "#services", text: "Services" },
   { href: "#contact", text: "Contact" },
 ];
 
