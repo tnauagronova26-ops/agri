@@ -518,12 +518,12 @@ export default function Home() {
           className="min-h-screen flex w-full flex-col items-center justify-center"
         >
           <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-center flex-1">
-            <div className="overflow-hidden bg-blue-600/20 py-3 border-b border-white/10 absolute top-20 left-20 right-20 rounded-lg">
+          <div className="overflow-hidden bg-blue-600/20 py-3 border-b border-white/10 absolute top-20 left-20 right-20 rounded-lg">
               <div className="flex animate-marquee whitespace-nowrap">
                 {[...Array(2)].map((_, i) => (
                   <span key={i} className="shrink-0 flex items-center gap-8 px-8">
                     {["Registration starts on 21/04/2026", "Last date for registration 12/05/2026"].map((text, j) => (
-                      <span key={j} className="text-black flex items-center gap-8 text-sm font-medium tracking-widest uppercase">
+                      <span key={j} className="text-black flex items-center gap-8 text-sm font-bold tracking-widest uppercase">
                         {text}
                         <span className="text-black mx-2">✦</span>
                       </span>
@@ -555,8 +555,11 @@ export default function Home() {
                 <Button
                   variant="outline"
                 >
-                  <a href="/brochure.pdf" download className="w-full">Brochure</a>                
-                </Button>          
+                  <a href="/Brochure.pdf" download className="w-full">Brochure</a>                
+                </Button>    
+                <Button>
+                  <a href="/General Instruction.pdf" download className="w-full">General Instruction</a>                
+                </Button>       
             </span>
           </div>
          

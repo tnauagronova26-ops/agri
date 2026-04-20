@@ -204,8 +204,8 @@ export default function Container(props: ContainerProps) {
         className={cn(
           styles.nav,
           "bg-primary shadow-md transition"
-        )}
-      >
+        )}>
+      <>
         <div className="absolute inset-y-0 right-0 flex items-center sm:hidden">
           <button
             onClick={() => setIsOpen(!isOpen)}
@@ -221,20 +221,37 @@ export default function Container(props: ContainerProps) {
             <CrossIcon data-hide={!isOpen} />
           </button>
         </div>
-        <Link href="/" className="flex items-center gap-3">
-          <span className="relative flex h-11 w-11 items-center justify-center overflow-hidden rounded-full border border-primary/30 bg-primary shadow-sm backdrop-blur sm:h-12 sm:w-12">
-            <Image
-              src="/assets/image copy 2.png"
-              alt="Agronova logo"
-              fill
-              sizes="48px"
-              className="object-cover"
-            />
-          </span>
-          <span className="text-sm font-semibold tracking-[0.18em] text-white/90 uppercase sm:text-base">
-            Tamil Nadu Agricultural University
-          </span>
-        </Link>
+        <div className="flex items-center gap-4">
+          <Link href="/" className="flex items-center gap-2">
+            <span className="relative flex h-11 w-11 items-center justify-center overflow-hidden rounded-full border border-primary/30 bg-primary shadow-sm backdrop-blur sm:h-12 sm:w-12">
+              <Image
+                src="/assets/image.png"
+                alt="Agronova logo"
+                fill
+                sizes="48px"
+                className="object-cover"
+              />
+            </span>
+            <span className="text-sm font-bold tracking-[0.18em] text-white/90 uppercase sm:text-base">
+              Agronova'26
+            </span>
+          </Link>
+
+          <div className="flex items-center gap-2 border-l border-white/20 pl-4">
+            <span className="relative flex h-9 w-9 items-center justify-center overflow-hidden rounded-full border border-white/20 shadow-sm backdrop-blur">
+              <Image
+                src="/assets/tnauLogo.jpg"
+                alt="TNAU logo"
+                fill
+                sizes="36px"
+                className="object-cover"
+              />
+            </span>
+            <span className="text-sm font-bold tracking-[0.18em] text-white/90 uppercase">
+              TNAU
+            </span>
+          </div>
+        </div>
 
         {/* Desktop menu */}
         <ul className={styles["desktop-nav"]}>
@@ -250,87 +267,89 @@ export default function Container(props: ContainerProps) {
           ))}
         </ul>
 
-        {/* Mobile menu */}
-        <AnimatePresence key="menu">
-          {isOpen && (
-            <motion.div
-              style={{ zIndex: 9999 }}
-              className="fixed inset-0 flex h-screen w-full flex-col justify-start overflow-y-hidden bg-background"
-              initial={{ x: "100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "100%" }}
-              transition={{ duration: 1, type: "spring", bounce: 0.25 }}
-            >
-              {/* Expandable menu */}
-              <div className="flex h-20 max-h-20 min-h-[60px] w-full items-center justify-between border-b pl-[22px] pr-1">
-                <span className="text-base font-medium lowercase">Menu</span>
-                <button
-                  onClick={() => setIsOpen(!isOpen)}
-                  className={cn(styles.burger, "text-white")}
-                  aria-controls="mobile-menu"
-                  aria-expanded="false"
-                >
-                  <span className="sr-only">Open main menu</span>
-                  <CrossIcon data-hide={!isOpen} />
-                </button>
-              </div>
-              <div className="flex h-full flex-col items-start justify-between overflow-y-auto">
-                {/* Links */}
-                <ul className="flex min-h-fit w-full flex-col items-start space-y-6 px-[22px] py-[58px]">
-                  {navLinks.map((link) => (
-                    <li key={link.text} className="w-full">
-                      {link.subLinks && link.subLinks.length > 0 ? (
-                        <>
-                          <span className="text-sm font-semibold uppercase tracking-[0.14em] text-foreground/90">
-                            {link.text}
-                          </span>
-                          <ul className="mt-3 space-y-3 pl-4">
-                            {link.subLinks.map((subLink) => (
-                              <li key={subLink.href}>
-                                <a
-                                  href={subLink.href}
-                                  onClick={handleMobileLinkClick}
-                                  className="text-base tracking-wide text-muted-foreground transition hover:text-foreground"
-                                >
-                                  {subLink.text}
-                                </a>
-                              </li>
-                            ))}
-                          </ul>
-                        </>
-                      ) : (
-                        <a
-                          href={link.href}
-                          onClick={handleMobileLinkClick}
-                          className="text-xl tracking-wide text-foreground"
-                        >
-                          {link.text}
-                        </a>
-                      )}
-                    </li>
-                  ))}
-                </ul>
-
-                {/* Footer */}
-                <div className="flex min-h-fit w-full flex-col space-y-8 px-[22px] py-10">
-                  <span className="text-sm text-muted-foreground">
-                    © {new Date().getFullYear()} Team.Agronova&apos;26. All rights reserved.
-                  </span>
+          {/* Mobile menu */}
+          <AnimatePresence key="menu">
+            {isOpen && (
+              <motion.div
+                style={{ zIndex: 9999 }}
+                className="fixed inset-0 flex h-screen w-full flex-col justify-start overflow-y-hidden bg-background"
+                initial={{ x: "100%" }}
+                animate={{ x: 0 }}
+                exit={{ x: "100%" }}
+                transition={{ duration: 1, type: "spring", bounce: 0.25 }}
+              >
+                <div className="flex h-20 max-h-20 min-h-[60px] w-full items-center justify-between border-b pl-[22px] pr-1">
+                  <div className="flex items-center gap-3">
+                    <span className="relative flex h-9 w-9 items-center justify-center overflow-hidden rounded-full border shadow-sm">
+                      <Image src="/assets/image.png" alt="Agronova logo" fill sizes="36px" className="object-cover" />
+                    </span>
+                    <span className="text-sm font-bold tracking-[0.18em] uppercase">Agronova'26</span>
+                    <span className="border-l border-foreground/20 pl-3 flex items-center gap-2">
+                      <span className="relative flex h-8 w-8 items-center justify-center overflow-hidden rounded-full border shadow-sm">
+                        <Image src="/assets/image copy 2.png" alt="TNAU logo" fill sizes="32px" className="object-cover" />
+                      </span>
+                      <span className="text-sm font-bold tracking-[0.18em] uppercase">TNAU</span>
+                    </span>
+                  </div>
+                  <button
+                    onClick={() => setIsOpen(!isOpen)}
+                    className={cn(styles.burger, "text-white")}
+                    aria-controls="mobile-menu"
+                    aria-expanded="false"
+                  >
+                    <span className="sr-only">Open main menu</span>
+                    <CrossIcon data-hide={!isOpen} />
+                  </button>
                 </div>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-        <style jsx global>{`
-          html,
-          body {
-            overflow-y: ${isOpen ? "hidden" : "initial"};
-            scrollbar-width: ${isOpen ? "none" : "unset"};
-            -ms-overflow-style: ${isOpen ? "none" : "unset"};
-            touch-action: ${isOpen ? "none" : "unset"};
-            -ms-touch-action: ${isOpen ? "none" : "unset"};
-          }
-        `}</style>
+
+                <div className="flex h-full flex-col items-start justify-between overflow-y-auto">
+                  {/* Links */}
+                  <ul className="flex min-h-fit w-full flex-col items-start space-y-6 px-[22px] py-[58px]">
+                    {navLinks.map((link) => (
+                      <li key={link.text} className="w-full">
+                        {link.subLinks && link.subLinks.length > 0 ? (
+                          <>
+                            <span className="text-sm font-semibold uppercase tracking-[0.14em] text-foreground/90">
+                              {link.text}
+                            </span>
+                            <ul className="mt-3 space-y-3 pl-4">
+                              {link.subLinks.map((subLink) => (
+                                <li key={subLink.href}>
+                                  <a href={subLink.href} onClick={handleMobileLinkClick} className="text-base tracking-wide text-muted-foreground transition hover:text-foreground">
+                                    {subLink.text}
+                                  </a>
+                                </li>
+                              ))}
+                            </ul>
+                          </>
+                        ) : (
+                          <a href={link.href} onClick={handleMobileLinkClick} className="text-xl tracking-wide text-foreground">
+                            {link.text}
+                          </a>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="flex min-h-fit w-full flex-col space-y-8 px-[22px] py-10">
+                    <span className="text-sm text-muted-foreground">
+                      © {new Date().getFullYear()} Team.Agronova&apos;26. All rights reserved.
+                    </span>
+                  </div>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+
+          <style jsx global>{`
+            html, body {
+              overflow-y: ${isOpen ? "hidden" : "initial"};
+              scrollbar-width: ${isOpen ? "none" : "unset"};
+              -ms-overflow-style: ${isOpen ? "none" : "unset"};
+              touch-action: ${isOpen ? "none" : "unset"};
+              -ms-touch-action: ${isOpen ? "none" : "unset"};
+            }
+          `}</style>
+        </>
       </nav>
 
       {/* Main content */}
