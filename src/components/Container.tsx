@@ -222,7 +222,7 @@ export default function Container(props: ContainerProps) {
           </button>
         </div>
         <Link href="/" className="flex items-center gap-3">
-          <span className="relative flex h-11 w-11 items-center justify-center overflow-hidden rounded-full border border-white/30 bg-white/10 shadow-sm backdrop-blur sm:h-12 sm:w-12">
+          <span className="relative flex h-11 w-11 items-center justify-center overflow-hidden rounded-full border border-primary/30 bg-primary shadow-sm backdrop-blur sm:h-12 sm:w-12">
             <Image
               src="/assets/image copy 2.png"
               alt="Agronova logo"
@@ -254,7 +254,8 @@ export default function Container(props: ContainerProps) {
         <AnimatePresence key="menu">
           {isOpen && (
             <motion.div
-              className="fixed right-0 top-0 z-40 flex h-screen w-full flex-col justify-start overflow-y-hidden bg-background"
+              style={{ zIndex: 9999 }}
+              className="fixed inset-0 flex h-screen w-full flex-col justify-start overflow-y-hidden bg-background"
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
