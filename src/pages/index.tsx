@@ -555,7 +555,7 @@ export default function Home() {
                 <Button
                   variant="outline"
                 >
-                  <a href="/Brochure.pdf" download className="w-full">Brochure</a>                
+                  <a href="/brochure.pdf" download className="w-full">Brochure</a>                
                 </Button>    
                 <Button>
                   <a href="/General Instruction.pdf" download className="w-full">General Instruction</a>                
