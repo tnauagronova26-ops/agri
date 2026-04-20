@@ -1,14 +1,17 @@
 import Container from "@/components/Container";
-import { useEffect, useRef, Suspense, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import styles from "@/styles/Home.module.css";
 import { Button } from "@/components/ui/button";
 import {
   ChevronRight,
   Code2,
   Frame,
+  Phone,
+  Instagram,
+  Mail,
 } from "lucide-react";
 import { TriangleDownIcon } from "@radix-ui/react-icons";
-import Spline from "@splinetool/react-spline";
 import Link from "next/link";
 import { cn, scrollTo } from "@/lib/utils";
 import { motion } from "framer-motion";
@@ -18,7 +21,7 @@ import {
   Server,
 } from "lucide-react";
 
-const aboutStats = [{ label: "Offline events", value: "13+" }, { label: "Online events", value: "3+" }, { label: "Prize pool", value: "30k+" }, { label: "No of days", value: "2" }];
+const aboutStats = [{ label: "Offline events", value: "13" }, { label: "Online events", value: "3" },{ label: "No of days", value: "2" }];
 
 const onlineEvents = [
   {
@@ -463,57 +466,34 @@ export default function Home() {
           data-scroll-section
           className="mt-24 flex w-full flex-col items-center xl:mt-0 xl:min-h-screen xl:justify-center"
         >
-          <div className="mx-auto grid w-full max-w-7xl items-center gap-10 xl:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] xl:gap-12">
-            <div className="flex w-full flex-col items-center text-center xl:items-start xl:text-left">
-              <div
-                data-scroll
-                data-scroll-enable-touch-speed
-                data-scroll-speed=".06"
-                className="flex items-center justify-center xl:justify-start"
-              >
-                <h1 className="clash-grotesk text-gradient text-center text-4xl font-semibold tracking-tight sm:text-6xl xl:text-left xl:text-7xl 2xl:text-8xl">
-                  AGRONOVA&apos;26
-                </h1>
-              </div>
-
-              <p
-                data-scroll
-                data-scroll-enable-touch-speed
-                data-scroll-speed=".06"
-                className="mt-5 max-w-2xl text-base leading-relaxed tracking-tight text-muted-foreground sm:text-lg 2xl:text-xl"
-              >
-               Securing soil sense. <i>"Reclaiminng the reselience of the roots."</i> </p>
-
-              <span
-                data-scroll
-                data-scroll-enable-touch-speed
-                data-scroll-speed=".06"
-                className="mt-8 flex flex-row items-center space-x-2"
-              >
-                <Link href="mailto:tnau.agronova26@gmail.com" passHref>
-                  <Button>
-                    Register <ChevronRight className="ml-1 h-4 w-4" />
-                  </Button>
-                </Link>
-                <Button
-                  variant="outline"
-                  onClick={() => scrollTo(document.querySelector("#about"))}
-                >
-                  Learn more
-                </Button>
-              </span>
-            </div>
-
+          <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-center">
             <div
               data-scroll
               data-scroll-speed="-.01"
-              id={styles["canvas-container"]}
-              className="mx-auto w-full max-w-[760px] justify-self-center xl:mx-0 xl:justify-self-end"
+              className="relative mx-auto w-full max-w-5xl aspect-[16/9]"
             >
-              <Suspense fallback={<span>Loading...</span>}>
-                <Spline scene="https://prod.spline.design/D7akjVjTOXrg4HQr/scene.splinecode" />
-              </Suspense>
+              <Image
+                src="/assets/WhatsApp Image 2026-04-17 at 9,50,22 PM-Picsart-AiImageEnhancer-Picsart-BackgroundRemover.jpeg"
+                alt="Agronova 26 emblem"
+                fill
+                priority
+                sizes="(max-width: 1280px) 100vw, 1024px"
+                className="object-contain p-4"
+              />
             </div>
+            <span className="-mt-8 flex flex-row items-center space-x-2">
+              <Link href="mailto:tnau.agronova26@gmail.com" passHref>
+                <Button>
+                  Register <ChevronRight className="ml-1 h-4 w-4" />
+                </Button>
+              </Link>
+              <Button
+                variant="outline"
+                onClick={() => scrollTo(document.querySelector("#about"))}
+              >
+                Learn more
+              </Button>
+            </span>
           </div>
           <div
             className={cn(
@@ -536,21 +516,20 @@ export default function Home() {
           >
             <div className="space-y-12">
               <h2 className="text-justify text-2xl font-light leading-relaxed tracking-tight text-foreground xl:text-[36px] xl:leading-[1.5]">
-               AGRONOVA’26 is Tamil Nadu’s premier agri tech symposium, bringing together the brightest minds in agriculture, technology, and sustainability. Organized annually by Tamil Nadu Agricultural University (TNAU), it serves as a dynamic platform for students, researchers, entrepreneurs, and farmers to explore cutting edge innovations, present transformative ideas, and collaborate on solutions for the future of farming.
-
-The 2026 edition focuses on emerging agri technologies, climate resilient practices, and digital agriculture, empowering the next generation of agri leaders to drive real world impact.
+               Agronova is a scientific event warmly welcomes the future enthusiasts of the Indian nation. This prestigious occasion offers each participant a level playing field to showcase their hidden talents. Agronova’26 cordially invites all inquisitive and passionate minds to delve into India’s agricultural backbone. Don’t miss out on this valuable opportunity—join us and showcase your talents to hit our targets.
               </h2>
               
               <div className="grid grid-cols-2 gap-6 pt-4 xl:grid-cols-4 xl:gap-8">
                 {aboutStats.map((stat) => (
                   <div
                     key={stat.label}
-                    className="flex flex-col space-y-2 rounded-lg border border-border/40 bg-secondary/20 p-6 backdrop-blur-sm transition-all hover:border-border/60 hover:bg-secondary/30"
+                    className="group relative flex flex-col space-y-2 rounded-lg border border-primary/60 bg-primary p-6 backdrop-blur-sm transition-all duration-300 hover:border-primary/100 hover:shadow-[0_0_30px_rgba(131,177,36,0.4)] hover:-translate-y-1"
                   >
-                    <span className="clash-grotesk text-gradient text-5xl font-bold tracking-tight xl:text-6xl">
+                    <div className="pointer-events-none absolute inset-0 rounded-lg border border-primary/0 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1)] transition-all duration-300 group-hover:border-primary/40 group-hover:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.2)]" />
+                    <span className="clash-grotesk relative text-white text-5xl font-bold tracking-tight xl:text-6xl">
                       {stat.value}
                     </span>
-                    <span className="text-sm leading-snug tracking-tight text-muted-foreground xl:text-base">
+                    <span className="relative text-sm leading-snug tracking-tight text-white/80 xl:text-base group-hover:text-white transition-colors">
                       {stat.label}
                     </span>
                   </div>
@@ -563,36 +542,29 @@ The 2026 edition focuses on emerging agri technologies, climate resilient practi
         {/* Events Online */}
         <section id="events-online" data-scroll-section className="my-40">
           <div data-scroll data-scroll-speed=".4" data-scroll-position="top">
-            <span className="text-gradient clash-grotesk text-sm font-semibold tracking-tighter">
+            <h2 className=" clash-grotesk mt-3 text-4xl font-semibold tracking-tight xl:text-6xl">
               Online Events
-            </span>
-            <h2 className="mt-3 text-4xl font-semibold tracking-tight xl:text-6xl">
-              Learn and build from anywhere.
             </h2>
-            <p className="mt-1.5 max-w-3xl text-base tracking-tight text-muted-foreground xl:text-lg">
-              Interactive virtual sessions designed to connect students, researchers, and builders through applied agri-tech experiences.
-            </p>
 
             <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
               {onlineEvents.map((event) => (
                 <div
                   key={event.title}
-                  className="rounded-xl border border-border/40 bg-secondary/20 p-6 backdrop-blur-sm transition-all hover:border-border/60 hover:bg-secondary/30"
+                  className="group relative rounded-xl border border-primary/60 bg-primary p-6 backdrop-blur-sm transition-all duration-300 hover:border-primary/100 hover:shadow-[0_0_30px_rgba(131,177,36,0.4)] hover:-translate-y-2 overflow-hidden"
                 >
-                  <p className="text-xs font-semibold uppercase tracking-wider text-primary">
-                    {event.format}
-                  </p>
-                  <h3 className="mt-2 text-xl font-semibold tracking-tight text-foreground">
+                  <div className="pointer-events-none absolute inset-0 rounded-xl border border-primary/0 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1)] transition-all duration-300 group-hover:border-primary/40 group-hover:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.2)]" />
+                  <div className="pointer-events-none absolute -inset-px opacity-0 rounded-xl bg-gradient-to-br from-white/20 to-transparent transition-opacity duration-300 group-hover:opacity-100" />
+                  <h3 className="relative text-xl font-semibold tracking-tight text-white group-hover:text-white/95 transition-colors">
                     {event.title}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  <p className="relative mt-2 text-sm leading-relaxed text-white/80 group-hover:text-white/90 transition-colors">
                     {event.description}
                   </p>
                   <Button
-                    className="mt-4"
+                    className="relative mt-4 bg-white text-primary hover:bg-white/90 font-semibold shadow-lg hover:shadow-xl transition-all duration-200"
                     onClick={() => scrollTo(document.querySelector("#registration"))}
                   >
-                    Register
+                    Get more info
                   </Button>
                 </div>
               ))}
@@ -603,36 +575,29 @@ The 2026 edition focuses on emerging agri technologies, climate resilient practi
         {/* Events Offline */}
         <section id="events-offline" data-scroll-section className="my-40">
           <div data-scroll data-scroll-speed=".4" data-scroll-position="top">
-            <span className="text-gradient clash-grotesk text-sm font-semibold tracking-tighter">
+            <h2 className=" clash-grotesk mt-3 text-4xl font-semibold tracking-tight xl:text-6xl">
               Offline Events
-            </span>
-            <h2 className="mt-3 text-4xl font-semibold tracking-tight xl:text-6xl">
-              Experience innovation on ground.
             </h2>
-            <p className="mt-1.5 max-w-3xl text-base tracking-tight text-muted-foreground xl:text-lg">
-              High-energy in-person tracks at TNAU where ideas, experiments, and collaborations move from concept to action.
-            </p>
-
+          
             <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
               {offlineEvents.map((event) => (
                 <div
                   key={event.title}
-                  className="rounded-xl border border-border/40 bg-secondary/20 p-6 backdrop-blur-sm transition-all hover:border-border/60 hover:bg-secondary/30"
+                  className="group relative rounded-xl border border-primary/60 bg-primary p-6 backdrop-blur-sm transition-all duration-300 hover:border-primary/100 hover:shadow-[0_0_30px_rgba(131,177,36,0.4)] hover:-translate-y-2 overflow-hidden"
                 >
-                  <p className="text-xs font-semibold uppercase tracking-wider text-primary">
-                    {event.format}
-                  </p>
-                  <h3 className="mt-2 text-xl font-semibold tracking-tight text-foreground">
+                  <div className="pointer-events-none absolute inset-0 rounded-xl border border-primary/0 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1)] transition-all duration-300 group-hover:border-primary/40 group-hover:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.2)]" />
+                  <div className="pointer-events-none absolute -inset-px opacity-0 rounded-xl bg-gradient-to-br from-white/20 to-transparent transition-opacity duration-300 group-hover:opacity-100" />
+                  <h3 className="relative text-xl font-semibold tracking-tight text-white group-hover:text-white/95 transition-colors">
                     {event.title}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  <p className="relative mt-2 text-sm leading-relaxed text-white/80 group-hover:text-white/90 transition-colors">
                     {event.description}
                   </p>
                   <Button
-                    className="mt-4"
+                    className="relative mt-4 bg-white text-primary hover:bg-white/90 font-semibold shadow-lg hover:shadow-xl transition-all duration-200"
                     onClick={() => scrollTo(document.querySelector("#registration"))}
                   >
-                    Register
+                    Get more info
                   </Button>
                 </div>
               ))}
@@ -643,47 +608,51 @@ The 2026 edition focuses on emerging agri technologies, climate resilient practi
         {/* Registration Instructions */}
         <section id="registration" data-scroll-section className="my-40">
           <div data-scroll data-scroll-speed=".4" data-scroll-position="top">
-            <span className="text-gradient clash-grotesk text-sm font-semibold tracking-tighter">
+             <h2 className=" clash-grotesk mt-3 text-4xl font-semibold tracking-tight xl:text-6xl">
               Registration
-            </span>
-            <h2 className="mt-3 text-4xl font-semibold tracking-tight xl:text-6xl">
-              General Instructions
             </h2>
-            <p className="mt-1.5 max-w-3xl text-base tracking-tight text-muted-foreground xl:text-lg">
-              Please review the instructions carefully before submitting your registration.
-            </p>
-
-            <div className="mt-10 grid gap-8 rounded-xl border border-border/40 bg-secondary/20 p-6 backdrop-blur-sm lg:grid-cols-[1fr_auto] lg:items-start">
-              <div>
-                <ul className="space-y-3 text-sm leading-relaxed text-muted-foreground xl:text-base">
-                  <li>1. Use your active email and phone number for all event communication.</li>
-                  <li>2. Participants can register for multiple events, but each form must be submitted separately.</li>
-                  <li>3. Team events must include complete member details during registration.</li>
-                  <li>4. Registration closes 48 hours before the event start time.</li>
-                  <li>5. Carry a valid student ID or government ID for verification on event day.</li>
-                </ul>
-                <div className="mt-6">
-                  <Link href="mailto:tnau.agronova26@gmail.com" passHref>
-                    <Button>
+            <div className="relative mt-10 grid gap-8 rounded-xl border border-primary/60 bg-primary p-8 backdrop-blur-sm lg:grid-cols-2 lg:items-center overflow-hidden transition-all duration-300 hover:border-primary/100 hover:shadow-[0_0_30px_rgba(131,177,36,0.4)] group">
+              <div className="pointer-events-none absolute inset-0 rounded-xl border border-primary/0 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1)] transition-all duration-300 group-hover:border-primary/40 group-hover:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.2)]" />
+              <div className="pointer-events-none absolute -inset-px opacity-0 rounded-xl bg-gradient-to-br from-white/10 to-transparent transition-opacity duration-300 group-hover:opacity-100" />
+              <div className="relative">
+                <h3 className="text-2xl font-semibold text-white mb-6">For further information</h3>
+                <div className="space-y-5">
+                  <div className="flex items-start gap-4 bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20 hover:bg-white/15 transition-all duration-300">
+                    <Phone className="h-6 w-6 flex-shrink-0 mt-0.5 text-white" />
+                    <div>
+                      <p className="font-semibold text-white text-lg">Arun Kumar</p>
+                      <p className="text-sm text-white/70">+91 98765 43210</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4 bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20 hover:bg-white/15 transition-all duration-300">
+                    <Phone className="h-6 w-6 flex-shrink-0 mt-0.5 text-white" />
+                    <div>
+                      <p className="font-semibold text-white text-lg">Priya Sharma</p>
+                      <p className="text-sm text-white/70">+91 97654 32109</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="mt-8">
+                  <Link href="https://docs.google.com/forms/d/e/1FAIpQLScpXTBfo6BdOPQQeIxUltaEd3lK8GVRn2u0TeE-ndct5vDMUg/viewform?usp=preview" passHref>
+                    <Button className="relative bg-white text-primary hover:bg-white/90 font-semibold shadow-lg hover:shadow-xl transition-all duration-200">
                       Complete Registration <ChevronRight className="ml-1 h-4 w-4" />
                     </Button>
                   </Link>
                 </div>
               </div>
 
-              <div className="mx-auto w-full max-w-[240px] lg:mx-0">
-                <div className="relative rounded-2xl border border-primary/30 bg-gradient-to-br from-primary/15 via-secondary/20 to-background/80 p-4 shadow-[0_16px_40px_-18px_rgba(34,199,116,0.65)]">
-                  <div className="pointer-events-none absolute -inset-2 -z-10 rounded-[1.25rem] bg-gradient-to-br from-primary/30 to-secondary/25 blur-xl" />
-                  <div className="relative overflow-hidden rounded-xl bg-white p-3 shadow-[0_12px_20px_-12px_rgba(0,0,0,0.6)] ring-1 ring-primary/20 [transform:perspective(1000px)_rotateX(8deg)_rotateY(-8deg)]">
+              <div className="relative flex items-center justify-center lg:justify-end">
+                <div className="rounded-2xl border border-white/20 bg-white/5 backdrop-blur-md p-4 shadow-2xl group/image hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] transition-all duration-300">
+                  <div className="relative overflow-hidden rounded-xl bg-white shadow-lg">
                     <img
-                      src="https://api.qrserver.com/v1/create-qr-code/?size=320x320&bgcolor=ffffff&color=0e8f5a&data=https%3A%2F%2Fforms.gle%2F"
-                      alt="Agronova registration QR code"
-                      className="h-full w-full rounded-md"
+                      src="/assets/PHOTO-2026-04-19-15-28-11.jpg"
+                      alt="Agronova coordinators"
+                      className="h-full w-full rounded-md object-cover"
                       loading="lazy"
                     />
                   </div>
                   <p className="mt-3 text-center text-xs font-medium uppercase tracking-[0.14em] text-foreground/80">
-                    Scan To Register
+                    Scan to Register
                   </p>
                 </div>
               </div>
@@ -691,76 +660,85 @@ The 2026 edition focuses on emerging agri technologies, climate resilient practi
           </div>
         </section>
 
-        {/* Services */}
-        <section id="services" data-scroll-section>
-          <div
-            data-scroll
-            data-scroll-speed=".4"
-            data-scroll-position="top"
-            className="my-24 flex flex-col justify-start space-y-10"
-          >
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{
-                duration: 1,
-                staggerChildren: 0.5,
-              }}
-              viewport={{ once: true }}
-              className="grid items-center gap-1.5 md:grid-cols-2 xl:grid-cols-3"
-            >
-              <div className="flex flex-col py-6 xl:p-6">
-                <h2 className="text-4xl font-medium tracking-tight">
-                  Need more info?
-                  <br />
-                  <span className="text-gradient clash-grotesk tracking-normal">
-                    I got you.
-                  </span>
-                </h2>
-                <p className="mt-2 tracking-tighter text-secondary-foreground">
-                  Here are some of the services I offer. If you have any
-                  questions, feel free to reach out.
-                </p>
-              </div>
-              {services.map((service) => (
-                <div
-                  key={service.service}
-                  className="flex h-[320px] flex-col items-start rounded-md bg-white/5 p-14 shadow-md backdrop-blur transition duration-300 hover:-translate-y-0.5 hover:bg-white/10 hover:shadow-md"
-                >
-                  <service.icon className="my-6 text-primary" size={20} />
-                  <span className="text-lg tracking-tight text-foreground">
-                    {service.service}
-                  </span>
-                  <span className="mt-2 tracking-tighter text-muted-foreground">
-                    {service.description}
-                  </span>
-                </div>
-              ))}
-            </motion.div>
-          </div>
-        </section>
-
         {/* Contact */}
         <section id="contact" data-scroll-section className="my-64">
+          <h2 className="clash-grotesk mt-3 text-4xl font-semibold tracking-tight xl:text-6xl mb-6 text-foreground text-center">
+            Contact Info
+          </h2>
+
           <div
-            data-scroll
-            data-scroll-speed=".4"
-            data-scroll-position="top"
-            className="flex flex-col items-center justify-center rounded-lg bg-gradient-to-br from-primary/[6.5%] to-white/5 px-8 py-16 text-center xl:py-24"
+            className="mx-auto flex flex-col items-center justify-center rounded-lg border border-primary/60 bg-primary px-6 py-8 text-center xl:py-12 max-w-2xl"
           >
-            <h2 className="text-4xl font-medium tracking-tighter xl:text-6xl">
-              Uyire Ponalum Vivasayatha{" "}
-              <span className="text-gradient clash-grotesk">Vitradhinga.</span>
-            </h2>
-            <p className="mt-1.5 text-base tracking-tight text-muted-foreground xl:text-sm">
-              Connect with the cultural wave.
-            </p>
-            <div className="mt-6 flex gap-4">
-              <Link href="mailto:tnau.agronova26@gmail.com" passHref>
-                <Button>Get in touch</Button>
-              </Link>
-              <a href="/308065124_464535789048420_7533850199481911634_n.jpg" download>
-                <Button variant="outline">Brouchure.</Button>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-2xl">
+              {/* Phone Card 1 */}
+              <a
+                href="tel:+918248961330"
+                className="text-primary hover:text-primary"
+              >
+                <div className="group relative rounded-xl border border-primary/20 bg-white p-6 backdrop-blur-sm transition-all duration-300 hover:border-primary/100 hover:shadow-[0_0_30px_rgba(131,177,36,0.3)] hover:-translate-y-2 overflow-hidden">
+                  <div className="pointer-events-none absolute inset-0 rounded-xl border border-primary/0 shadow-[inset_0_1px_0_0_rgba(131,177,36,0.1)] transition-all duration-300 group-hover:border-primary/40 group-hover:shadow-[inset_0_1px_0_0_rgba(131,177,36,0.2)]" />
+                  <div className="pointer-events-none absolute -inset-px opacity-0 rounded-xl bg-gradient-to-br from-primary/10 to-transparent transition-opacity duration-300 group-hover:opacity-100" />
+                  <div className="relative flex items-center gap-3">
+                    <Phone className="h-5 w-5 flex-shrink-0" />
+                    <span className="font-semibold text-sm">+91 82489 61330</span>
+                  </div>
+                </div>
+              </a>
+
+              {/* Phone Card 2 */}
+              <a
+                href="tel:+918220915749"
+                className="text-primary hover:text-primary"
+              >
+                <div className="group relative rounded-xl border border-primary/20 bg-white p-6 backdrop-blur-sm transition-all duration-300 hover:border-primary/100 hover:shadow-[0_0_30px_rgba(131,177,36,0.3)] hover:-translate-y-2 overflow-hidden">
+                  <div className="pointer-events-none absolute inset-0 rounded-xl border border-primary/0 shadow-[inset_0_1px_0_0_rgba(131,177,36,0.1)] transition-all duration-300 group-hover:border-primary/40 group-hover:shadow-[inset_0_1px_0_0_rgba(131,177,36,0.2)]" />
+                  <div className="pointer-events-none absolute -inset-px opacity-0 rounded-xl bg-gradient-to-br from-primary/10 to-transparent transition-opacity duration-300 group-hover:opacity-100" />
+                  <div className="relative flex items-center gap-3">
+                    <Phone className="h-5 w-5 flex-shrink-0" />
+                    <span className="font-semibold text-sm">+91 82209 15749</span>
+                  </div>
+                </div>
+              </a>
+
+              {/* Instagram Card */}
+              <a
+                href="https://instagram.com/agronova.2026"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:text-primary"
+              >
+                <div className="group relative rounded-xl border border-primary/20 bg-white p-6 backdrop-blur-sm transition-all duration-300 hover:border-primary/100 hover:shadow-[0_0_30px_rgba(131,177,36,0.3)] hover:-translate-y-2 overflow-hidden">
+                  <div className="pointer-events-none absolute inset-0 rounded-xl border border-primary/0 shadow-[inset_0_1px_0_0_rgba(131,177,36,0.1)] transition-all duration-300 group-hover:border-primary/40 group-hover:shadow-[inset_0_1px_0_0_rgba(131,177,36,0.2)]" />
+                  <div className="pointer-events-none absolute -inset-px opacity-0 rounded-xl bg-gradient-to-br from-primary/10 to-transparent transition-opacity duration-300 group-hover:opacity-100" />
+                  <div className="relative flex items-center gap-3">
+                    <Instagram className="h-5 w-5 flex-shrink-0" />
+                    <span className="font-semibold text-sm">@agronova.2026</span>
+                  </div>
+                </div>
+              </a>
+
+              {/* Email Card */}
+              <a
+                href="mailto:tnau.agronova26@gmail.com"
+                className="text-primary hover:text-primary"
+              >
+                <div className="group relative rounded-xl border border-primary/20 bg-white p-6 backdrop-blur-sm transition-all duration-300 hover:border-primary/100 hover:shadow-[0_0_30px_rgba(131,177,36,0.3)] hover:-translate-y-2 overflow-hidden">
+                  <div className="pointer-events-none absolute inset-0 rounded-xl border border-primary/0 shadow-[inset_0_1px_0_0_rgba(131,177,36,0.1)] transition-all duration-300 group-hover:border-primary/40 group-hover:shadow-[inset_0_1px_0_0_rgba(131,177,36,0.2)]" />
+                  <div className="pointer-events-none absolute -inset-px opacity-0 rounded-xl bg-gradient-to-br from-primary/10 to-transparent transition-opacity duration-300 group-hover:opacity-100" />
+                  <div className="relative flex items-center gap-3">
+                    <Mail className="h-5 w-5 flex-shrink-0" />
+                    <span className="font-semibold text-sm">tnau.agronova26@gmail.com</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            {/* Brochure Button */}
+            <div className="mt-8 w-full max-w-2xl">
+              <a href="/308065124_464535789048420_7533850199481911634_n.jpg" download className="w-full">
+                <Button className="relative w-full bg-white text-primary hover:bg-white/90 font-semibold shadow-lg hover:shadow-xl transition-all duration-200">
+                  <span>Download Brochure</span>
+                </Button>
               </a>
             </div>
           </div>

@@ -191,12 +191,14 @@ export default function Container(props: ContainerProps) {
         <meta name="twitter:title" content={meta.title} />
         <meta name="twitter:description" content={meta.description} />
         <meta name="twitter:image" content={meta.image} />
-        <link rel="icon" type="image/png" sizes="16x16" href="/KRJ512x512.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/KRJ512x512.png" />
-        <link rel="icon" type="image/png" sizes="192x192" href="/KRJ512x512.png" />
+        <link rel="icon" href="/favicon-new.ico" sizes="any" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/KRJ16x16.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/KRJ32x32.png" />
+        <link rel="icon" type="image/png" sizes="192x192" href="/KRJ192x192.png" />
         <link rel="icon" type="image/png" sizes="512x512" href="/KRJ512x512.png" />
+        <link rel="shortcut icon" href="/favicon-new.ico" />
         <link rel="manifest" href="/manifest.json" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/KRJ512x512.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/KRJ180x180.png" />
       </Head>
       <nav
         className={cn(
