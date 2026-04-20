@@ -532,7 +532,7 @@ export default function Home() {
                 className="object-contain p-2"
               />
             </div>
-            <span className="-mt-16 md:-mt-48 flex flex-row items-center justify-center space-x-2 relative z-50">
+            <span className="-mt-16 md:-mt-48 flex flex-row items-center justify-center space-x-2 relative z-30">
               <Link href="#registration">
                 <Button>
                   Register <ChevronRight className="ml-1 h-4 w-4" />
