@@ -523,7 +523,7 @@ export default function Home() {
                 {[...Array(2)].map((_, i) => (
                   <span key={i} className="shrink-0 flex items-center gap-8 px-8">
                     {["Registration starts on 21/04/2026", "Last date for registration 12/05/2026"].map((text, j) => (
-                      <span key={j} className="text-black flex items-center gap-8 text-white text-sm font-medium tracking-widest uppercase">
+                      <span key={j} className="text-black flex items-center gap-8 text-sm font-medium tracking-widest uppercase">
                         {text}
                         <span className="text-black mx-2">✦</span>
                       </span>
