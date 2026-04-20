@@ -526,8 +526,7 @@ export default function Home() {
               <Image
                 src="/assets/WhatsApp Image 2026-04-17 at 9,50,22 PM-Picsart-AiImageEnhancer-Picsart-BackgroundRemover.jpeg"
                 alt="Agronova 26 emblem"
-                width={2000}
-                height={900}
+                fill
                 priority
                 sizes="100vw"
                 className="object-contain p-2"
