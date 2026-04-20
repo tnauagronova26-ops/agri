@@ -46,23 +46,42 @@ const onlineEvents = [
 
 const offlineEvents = [
   {
-    title: "Innovation Expo",
-    format: "On-campus Showcase",
-    description:
-      "Experience live demos of robotics, IoT devices, and smart irrigation systems built for resilient agriculture.",
-  },
+    title: "Agrishop Tank",
+    },
   {
-    title: "Field Diagnostics Challenge",
-    format: "Team Competition",
-    description:
-      "Solve real farm scenarios involving soil health, pest control, and yield optimization with data-backed reasoning.",
-  },
+    title: "Bio-Alchemy",
+   },
   {
-    title: "Industry Connect Meet",
-    format: "Networking Session",
-    description:
-      "Engage directly with researchers, startups, and agribusiness leaders for collaboration and career opportunities.",
-  },
+    title: "Youth Parliament",
+   },{
+    title: "Waste to Wealth",
+   },
+  {
+    title: "Farm League Arena",
+   },
+  {
+    title: "Sopranox",
+    },{
+    title: "Bounty Hunt",
+   },
+  {
+    title: "Field Forensics",
+    },
+  {
+    title: "Foodpreneur Feast",
+    },
+  {
+    title: "Abstract cum Presentation",
+   },
+  {
+    title: "Fluents and Fearless",
+    },
+  {
+    title: "Grain Art",
+    },
+  {
+    title: "Workshop",
+    },
 ];
 
 const projectDetails = [
@@ -413,7 +432,7 @@ export default function Home() {
     const sections = document.querySelectorAll("section");
     const navLinks = document.querySelectorAll(".nav-link");
 
-    let locomotiveInstance: { destroy: () => void } | null = null;
+    let locomotiveInstance: { destroy: () => void; scroll?: { scrollTo: (target: HTMLElement | null, options?: any) => void } } | null = null;
 
     async function getLocomotive() {
       if (!refScrollContainer.current) return;
@@ -423,6 +442,25 @@ export default function Home() {
         el: refScrollContainer.current,
         smooth: true,
       });
+
+      // Handle hash navigation with Locomotive Scroll
+      const handleHashNavigation = (e: Event) => {
+        const target = e.target as HTMLAnchorElement;
+        if (target.tagName === "A" && target.hash) {
+          e.preventDefault();
+          const id = target.hash.substring(1);
+          const element = document.getElementById(id);
+          if (element && locomotiveInstance?.scroll) {
+            locomotiveInstance.scroll.scrollTo(element);
+          }
+        }
+      };
+
+      refScrollContainer.current?.addEventListener("click", handleHashNavigation);
+
+      return () => {
+        refScrollContainer.current?.removeEventListener("click", handleHashNavigation);
+      };
     }
 
     function handleScroll() {
@@ -464,35 +502,36 @@ export default function Home() {
         <section
           id="home"
           data-scroll-section
-          className="min-h-screen flex w-full flex-col items-center justify-center pt-20"
+          className="min-h-screen flex w-full flex-col items-center justify-center"
         >
-          <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-center">
+          <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-center flex-1">
             <div
               data-scroll
               data-scroll-speed="-.01"
-              className="relative mx-auto w-full max-w-5xl aspect-[16/9]"
+              className="relative mx-auto w-full aspect-[16/9]"
             >
               <Image
                 src="/assets/WhatsApp Image 2026-04-17 at 9,50,22 PM-Picsart-AiImageEnhancer-Picsart-BackgroundRemover.jpeg"
                 alt="Agronova 26 emblem"
                 fill
                 priority
-                sizes="(max-width: 1280px) 100vw, 1024px"
-                className="object-contain p-4"
+                sizes="100vw"
+                className="object-contain p-2"
               />
             </div>
-            <span className="-mt-8 flex flex-row items-center space-x-2">
-              <Link href="mailto:tnau.agronova26@gmail.com" passHref>
+            <span className="-mt-48 flex flex-row items-center justify-center space-x-2 relative z-50">
+              <Link href="#registration">
                 <Button>
                   Register <ChevronRight className="ml-1 h-4 w-4" />
                 </Button>
               </Link>
-              <Button
-                variant="outline"
-                onClick={() => scrollTo(document.querySelector("#about"))}
-              >
-                Learn more
-              </Button>
+              <Link href="#about">
+                <Button
+                  variant="outline"
+                >
+                  Learn more
+                </Button>
+              </Link>
             </span>
           </div>
           <div
@@ -620,15 +659,15 @@ export default function Home() {
                   <div className="flex items-start gap-4 bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20 hover:bg-white/15 transition-all duration-300">
                     <Phone className="h-6 w-6 flex-shrink-0 mt-0.5 text-white" />
                     <div>
-                      <p className="font-semibold text-white text-lg">Arun Kumar</p>
-                      <p className="text-sm text-white/70">+91 98765 43210</p>
+                      <p className="font-semibold text-white text-lg">Mr. Semmozhimaran V</p>
+                      <p className="text-sm text-white/80">+91 81226 10586</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4 bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20 hover:bg-white/15 transition-all duration-300">
                     <Phone className="h-6 w-6 flex-shrink-0 mt-0.5 text-white" />
                     <div>
-                      <p className="font-semibold text-white text-lg">Priya Sharma</p>
-                      <p className="text-sm text-white/70">+91 97654 32109</p>
+                      <p className="font-semibold text-white text-lg">Ms. Gayathri T</p>
+                      <p className="text-sm text-white/80">+91 87543 05340</p>
                     </div>
                   </div>
                 </div>
