@@ -203,9 +203,7 @@ export default function Container(props: ContainerProps) {
       <nav
         className={cn(
           styles.nav,
-          isScrolled
-            ? "bg-gradient-to-br from-background to-transparent shadow-md backdrop-blur transition"
-            : "bg-transparent",
+          "bg-primary shadow-md transition"
         )}
       >
         <div className="absolute inset-y-0 right-0 flex items-center sm:hidden">
@@ -213,7 +211,7 @@ export default function Container(props: ContainerProps) {
             onClick={() => setIsOpen(!isOpen)}
             className={cn(
               styles.burger,
-              "inline-flex transform items-center justify-center rounded-md p-2 transition-all duration-300 focus:outline-none",
+              "inline-flex transform items-center justify-center rounded-md p-2 transition-all duration-300 focus:outline-none text-white",
             )}
             aria-controls="mobile-menu"
             aria-expanded="false"
@@ -224,7 +222,7 @@ export default function Container(props: ContainerProps) {
           </button>
         </div>
         <Link href="/" className="flex items-center gap-3">
-          <span className="relative flex h-11 w-11 items-center justify-center overflow-hidden rounded-full border border-border/60 bg-background/60 shadow-sm backdrop-blur sm:h-12 sm:w-12">
+          <span className="relative flex h-11 w-11 items-center justify-center overflow-hidden rounded-full border border-white/30 bg-white/10 shadow-sm backdrop-blur sm:h-12 sm:w-12">
             <Image
               src="/assets/image copy 2.png"
               alt="Agronova logo"
@@ -233,7 +231,7 @@ export default function Container(props: ContainerProps) {
               className="object-cover"
             />
           </span>
-          <span className="text-sm font-semibold tracking-[0.18em] text-foreground/90 uppercase sm:text-base">
+          <span className="text-sm font-semibold tracking-[0.18em] text-white/90 uppercase sm:text-base">
             Tamil Nadu Agricultural University
           </span>
         </Link>
@@ -267,7 +265,7 @@ export default function Container(props: ContainerProps) {
                 <span className="text-base font-medium lowercase">Menu</span>
                 <button
                   onClick={() => setIsOpen(!isOpen)}
-                  className={styles.burger}
+                  className={cn(styles.burger, "text-white")}
                   aria-controls="mobile-menu"
                   aria-expanded="false"
                 >

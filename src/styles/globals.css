@@ -7,33 +7,33 @@
 
 @layer base {
   :root {
-    --background: 156 34% 6%;
-    --foreground: 152 32% 96%;
+    --background: 156 34% 96%;
+    --foreground: 152 32% 10%;
 
-    --card: 156 32% 8%;
-    --card-foreground: 152 32% 96%;
+    --card: 156 32% 100%;
+    --card-foreground: 152 32% 10%;
 
-    --popover: 156 32% 8%;
-    --popover-foreground: 152 32% 96%;
+    --popover: 156 32% 100%;
+    --popover-foreground: 152 32% 10%;
 
-    --primary: 145 72% 52%;
-    --primary-foreground: 156 34% 8%;
+    --primary: 82 69% 23%;
+    --primary-foreground: 156 34% 96%;
 
     --secondary: 161 55% 46%;
-    --secondary-foreground: 154 30% 86%;
+    --secondary-foreground: 154 30% 10%;
 
-    --muted: 156 22% 16%;
-    --muted-foreground: 156 14% 66%;
+    --muted: 156 22% 84%;
+    --muted-foreground: 156 14% 44%;
 
-    --accent: 156 22% 16%;
-    --accent-foreground: 152 32% 96%;
+    --accent: 156 22% 84%;
+    --accent-foreground: 152 32% 10%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 156 20% 18%;
-    --input: 156 20% 18%;
-    --ring: 145 72% 60%;
+    --border: 156 20% 82%;
+    --input: 156 20% 82%;
+    --ring: 145 72% 40%;
 
     --radius: 0.5rem;
   }
@@ -56,10 +56,13 @@
     @apply antialiased;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground m-0 p-0;
   }
   section {
-    scroll-margin-top: 60px;
+    scroll-margin-top: 0;
+  }
+  section#home {
+    scroll-margin-top: 0;
   }
 }
 
@@ -91,10 +94,10 @@
     @apply bg-gradient-to-br from-primary to-secondary bg-clip-text text-transparent;
   }
   .nav-active {
-    @apply text-sm tracking-tight text-foreground;
+    @apply text-sm tracking-tight text-white;
   }
   .nav-link {
-    @apply text-sm tracking-tight text-muted-foreground;
+    @apply text-sm tracking-tight text-white/80 hover:text-white transition;
   }
 
   /* blinking animation */

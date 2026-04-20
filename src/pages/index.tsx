@@ -464,7 +464,7 @@ export default function Home() {
         <section
           id="home"
           data-scroll-section
-          className="mt-24 flex w-full flex-col items-center xl:mt-0 xl:min-h-screen xl:justify-center"
+          className="min-h-screen flex w-full flex-col items-center justify-center pt-20"
         >
           <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-center">
             <div
