@@ -779,14 +779,14 @@ export default function Home() {
               </a>
             </div>
 
-            {/* Brochure Button */}
+            {/* Brochure Button
             <div className="mt-8 w-full max-w-2xl">
               <a href="/308065124_464535789048420_7533850199481911634_n.jpg" download className="w-full">
                 <Button className="relative w-full bg-white text-primary hover:bg-white/90 font-semibold shadow-lg hover:shadow-xl transition-all duration-200">
                   <span>Download Brochure</span>
                 </Button>
               </a>
-            </div>
+            </div> */}
           </div>
         </section>
       </div>
