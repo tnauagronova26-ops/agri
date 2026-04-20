@@ -541,7 +541,7 @@ export default function Home() {
                 <Button
                   variant="outline"
                 >
-                  <a href="/308065124_464535789048420_7533850199481911634_n.jpg" download className="w-full">Brochure</a>                
+                  <a href="/brochure.pdf" download className="w-full">Brochure</a>                
                 </Button>          
             </span>
           </div>
