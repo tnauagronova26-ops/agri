@@ -286,7 +286,7 @@ export default function Container(props: ContainerProps) {
                     <span className="text-sm font-bold tracking-[0.18em] uppercase">Agronova'26</span>
                     <span className="border-l border-foreground/20 pl-3 flex items-center gap-2">
                       <span className="relative flex h-8 w-8 items-center justify-center overflow-hidden rounded-full border shadow-sm">
-                        <Image src="/assets/image copy 2.png" alt="TNAU logo" fill sizes="32px" className="object-cover" />
+                        <Image src="/assets/tnauLogo.jpg" alt="TNAU logo" fill sizes="32px" className="object-cover" />
                       </span>
                       <span className="text-sm font-bold tracking-[0.18em] uppercase">TNAU</span>
                     </span>
