@@ -558,7 +558,7 @@ export default function Home() {
                   <a href="/brochure.pdf" download className="w-full">Brochure</a>                
                 </Button>    
                 <Button>
-                  <a href="/generalInstruction.pdf" download className="w-full">General Instruction</a>                
+                  <a href="/general-instruction.pdf" download className="w-full">General Instruction</a>                
                 </Button>       
             </span>
           </div>
