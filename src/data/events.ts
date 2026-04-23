@@ -73,7 +73,7 @@ export const offlineEvents = [
   },
   {
     title: "Foodpreneur Feast",
-    poster: "/posters/foodpreneurFeast.jpeg",
+    poster: "/posters/foodpreneurFeast.png",
     eventRules: "/rules/foodpreneurFeast.pdf",
     description: "An innovative, idea-driven event that combines food creativity and sustainability. Develop value-added food products using agricultural produce while emphasizing zero-waste and agribusiness thinking.",
   },
