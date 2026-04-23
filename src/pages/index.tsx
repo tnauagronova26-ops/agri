@@ -20,82 +20,9 @@ import {
   Sigma,
   Server,
 } from "lucide-react";
+import { onlineEvents, offlineEvents } from "@/data/events";
 
 const aboutStats = [{ label: "Offline events", value: "13" }, { label: "Online events", value: "3" },{ label: "No of days", value: "2" }];
-
-const onlineEvents = [
-  {
-    title: "Cine Bytes",
-    format: "Short Film",
-    description:
-      "Lights, camera, agriculture! Showcase your storytelling skills through short films that capture the essence of farming, innovation, and sustainability. From rural realities to agri tech revolutions, bring your vision to life in under 5 minutes.",
-  },
-  {
-    title: "Pixel Saga",
-    format: "Photography",
-    description:
-      "A picture is worth a thousand harvests. Capture the soul of agriculture through your lens – be it golden fields, hardworking hands, modern farm tech, or nature's quiet moments. Let every frame tell a powerful story.",
-  },
-  {
-    title: "Market Masters",
-    format: "Advertisement",
-    description:
-      "Think like a marketer, sell like a pro. Create a compelling ad for an agri product or service that grabs attention and drives impact. Creativity, persuasion, and strategy – may the best brand builder win.",
-  },
-];
-
-const offlineEvents = [
-  {
-    title: "Agri Shark Tank",
-    description: "",
-    },
-  {
-    title: "Bio-Alchemy",
-    description: "",
-   },
-  {
-    title: "Youth Parliament",
-    description: "",
-   },{
-    title: "Waste to Wealth",
-    description: "",
-   },
-  {
-    title: "Farm League Arena",
-    description: "",
-   },
-  {
-    title: "SopranoX",
-    description: "",
-    },{
-    title: "Bounty Hunt",
-    description: "",
-   },
-  {
-    title: "Field Forensics",
-    description: "",
-    },
-  {
-    title: "Foodpreneur Feast",
-    description: "",
-    },
-  {
-    title: "Abstract cum Presentation",
-    description: "",
-   },
-  {
-    title: "Fluents and Fearless",
-    description: "",
-    },
-  {
-    title: "Grain Art",
-    description: "",
-    },
-  {
-    title: "Workshop",
-    description: "",
-    },
-];
 
 const projectDetails = [
   {
@@ -621,12 +548,12 @@ export default function Home() {
                       {event.description}
                     </p>
                   )}
-                  <Button
-                    className="relative mt-4 bg-white text-primary hover:bg-white/90 font-semibold shadow-lg hover:shadow-xl transition-all duration-200"
-                    onClick={() => scrollTo(document.querySelector("#registration"))}
+                  <Link
+                    href={`/online-event/${event.title.toLowerCase().replace(/\s+/g, "-")}`}
+                    className="relative mt-4 inline-flex items-center justify-center bg-white text-primary hover:bg-white/90 font-semibold shadow-lg hover:shadow-xl transition-all duration-200 px-4 py-2 rounded-md"
                   >
                     Get more info
-                  </Button>
+                  </Link>
                 </div>
               ))}
             </div>
@@ -656,12 +583,12 @@ export default function Home() {
                       {event.description}
                     </p>
                   )}
-                  <Button
-                    className="relative mt-4 bg-white text-primary hover:bg-white/90 font-semibold shadow-lg hover:shadow-xl transition-all duration-200"
-                    onClick={() => scrollTo(document.querySelector("#registration"))}
+                  <Link
+                    href={`/offline-event/${event.title.toLowerCase().replace(/\s+/g, "-")}`}
+                    className="relative mt-4 inline-flex items-center justify-center bg-white text-primary hover:bg-white/90 font-semibold shadow-lg hover:shadow-xl transition-all duration-200 px-4 py-2 rounded-md"
                   >
                     Get more info
-                  </Button>
+                  </Link>
                 </div>
               ))}
             </div>
