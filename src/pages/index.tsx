@@ -22,7 +22,7 @@ import {
 } from "lucide-react";
 import { onlineEvents, offlineEvents } from "@/data/events";
 
-const aboutStats = [{ label: "Offline events", value: "13" }, { label: "Online events", value: "3" },{ label: "No of days", value: "2" }];
+const aboutStats = [{ label: "Offline events", value: "13" }, { label: "Online events", value: "3" },{ label: "No of days", value: "2" }, { label: "Event Date", value: "May 20, 21" }];
 
 const projectDetails = [
   {
@@ -449,7 +449,7 @@ export default function Home() {
               <div className="flex animate-marquee whitespace-nowrap">
                 {[...Array(2)].map((_, i) => (
                   <span key={i} className="shrink-0 flex items-center gap-8 px-8">
-                    {["Registration starts on 21/04/2026", "Last date for registration 12/05/2026"].map((text, j) => (
+                    {["Registration starts on 21/04/2026", "Last date for registration 12/05/2026", "Last Date for abstract submission 07/05/2025"].map((text, j) => (
                       <span key={j} className="text-black flex items-center gap-8 text-sm font-bold tracking-widest uppercase">
                         {text}
                         <span className="text-black mx-2">✦</span>
@@ -505,14 +505,14 @@ export default function Home() {
                Agronova is a scientific event warmly welcomes the future enthusiasts of the Indian nation. This prestigious occasion offers each participant a level playing field to showcase their hidden talents. Agronova’26 cordially invites all inquisitive and passionate minds to delve into India’s agricultural backbone. Don’t miss out on this valuable opportunity—join us and showcase your talents to hit our targets.
               </h2>
               
-              <div className="grid grid-cols-2 gap-6 pt-4 xl:grid-cols-3 xl:gap-8">
+              <div className="grid grid-cols-2 gap-6 pt-4 xl:grid-cols-4 xl:gap-8">
                 {aboutStats.map((stat) => (
                   <div
                     key={stat.label}
                     className="group relative flex flex-col space-y-2 rounded-lg border border-primary/60 bg-primary p-6 backdrop-blur-sm transition-all duration-300 hover:border-primary/100 hover:shadow-[0_0_30px_rgba(131,177,36,0.4)] hover:-translate-y-1"
                   >
                     <div className="pointer-events-none absolute inset-0 rounded-lg border border-primary/0 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1)] transition-all duration-300 group-hover:border-primary/40 group-hover:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.2)]" />
-                    <span className="clash-grotesk relative text-white text-5xl font-bold tracking-tight xl:text-6xl">
+                    <span className="clash-grotesk relative text-white text-5xl font-bold tracking-tight xl:text-4xl">
                       {stat.value}
                     </span>
                     <span className="relative text-sm leading-snug tracking-tight text-white/80 xl:text-base group-hover:text-white transition-colors">
