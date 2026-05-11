@@ -449,7 +449,7 @@ export default function Home() {
               <div className="flex animate-marquee whitespace-nowrap">
                 {[...Array(2)].map((_, i) => (
                   <span key={i} className="shrink-0 flex items-center gap-8 px-8">
-                    {["Registration starts on 21/04/2026", "Last date for registration 12/05/2026", "Last Date for abstract submission 07/05/2025"].map((text, j) => (
+                    {["Registration is extended", "Last date for registration 14/05/2026"].map((text, j) => (
                       <span key={j} className="text-black flex items-center gap-8 text-sm font-bold tracking-widest uppercase">
                         {text}
                         <span className="text-black mx-2">✦</span>
